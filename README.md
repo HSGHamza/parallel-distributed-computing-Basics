@@ -46,4 +46,4 @@ This chapter explores threading, a way to achieve concurrency by running multipl
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/HSGHamza/parallel-distributed-computing-Basics

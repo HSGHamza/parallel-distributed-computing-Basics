@@ -45,3 +45,10 @@ In this code there is a function myFunc and a main function. The myFunc function
 In this code there is a class MyProcess and a main function. The MyProcess class inherits from multiprocessing.Process and overrides the run method. The run method prints a message indicating it has been called along with the name of the process. In the main function a loop runs 10 times. In each iteration a new process is created using the MyProcess class. The process is started which triggers the run method and then the program waits for the process to complete using the join method.
 ### Output
 ![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
+
+
+## process_pool
+### Explanation:
+In this code there is a function function_square and a main function. The function_square function takes a single input value, squares it, and returns the result. In the main function a list of numbers from 0 to 99 is created and a multiprocessing pool with 4 worker processes is initialized. The pool.map method is used to apply the function_square function to each value in the list, distributing the work across the worker processes. After mapping the tasks the pool is closed to prevent new tasks from being submitted and the program waits for all worker processes to complete using the join method. Finally the squared results are printed as a list.
+### Output
+![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")

@@ -91,3 +91,10 @@ In this code the `myFunc` function is imported from another module named `myFunc
 ![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
 
 
+## spawning_processes
+### Explanation:
+In this code there is a function `myFunc` and a main function. The `myFunc` function takes an argument `i`, prints a message indicating the process number, and then runs a loop from 0 to `i-1`, printing each value as the output of `myFunc`. 
+In the main function, a loop runs 6 times. In each iteration, a new process is created targeting the `myFunc` function and passing the current loop index `i` as an argument. The process is started, which triggers the execution of `myFunc`, and the program waits for the process to finish using the `join` method before proceeding to the next iteration.
+### Output
+![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
+

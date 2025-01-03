@@ -23,7 +23,7 @@ This code simulates a Finite State Machine (FSM) using Python's `asyncio` librar
 This script demonstrates using `asyncio` with `Future` objects to run two asynchronous tasks concurrently. The `first_coroutine` computes the sum of the first `num` integers, while the `second_coroutine` calculates the factorial of `num`. The script takes two command-line arguments (`num1` and `num2`) which are passed to the coroutines. Each coroutine uses `await asyncio.sleep()` to simulate a time delay and makes the computation non-blocking. The results of the computations are set into `Future` objects (`future1` and `future2`). After the coroutines are executed, `add_done_callback` is used to invoke `got_result`, which prints the result from the `Future`. The `asyncio.get_event_loop()` manages the event loop, and `loop.run_until_complete()` ensures both tasks run concurrently. The script terminates once both tasks are complete and the results are printed.
 
 ### Output:
-![Ergonomic](images/concurrent_futures_pooling.PNG "Ergonomic ")
+![Ergonomic](images/dealing.PNG "Ergonomic ")
 
 ## event_loops
 

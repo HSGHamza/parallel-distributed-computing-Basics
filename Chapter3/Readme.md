@@ -17,7 +17,7 @@ The second class, `consumer`, also inherits from `multiprocessing.Process`. It t
 In the main function, a shared multiprocessing queue is created. Two processes, `process_producer` and `process_consumer`, are created from the `producer` and `consumer` classes, respectively. Both processes are started and joined, ensuring they complete their tasks before the program ends.
 
 ### Output
-![Communication with pipe](mages/communicating_with_queue.PNG "image1")
+![Communication with pipe](images/communicating_with_queue.PNG "image1")
 
 ## derom
 ### Explanation:

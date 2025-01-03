@@ -6,3 +6,4 @@ in this code their are two functions, first function takes a pipe and fills it w
 in last main function 2 pipes and 2 process are made first pipe and process call the first function and second pipe and process call second function and both unused ends of pipes are closed and then pipes the output pipe values are printed
 
 ### Output
+![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG)

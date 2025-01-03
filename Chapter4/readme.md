@@ -4,7 +4,7 @@
 ### Explaination:
 In this code the mpi4py library is used to demonstrate Alltoall communication in MPI. Each process creates a senddata array where elements are scaled by (rank+1) and allocates an empty recvdata array to receive data from other processes. The Alltoall method allows each process to send its data to every other process and receive corresponding data from them. After the communication, each process prints its rank, the data it sent, and the data it received. This pattern ensures every process exchanges data with all others.
 
-###output:
+### output:
 ![Ergonomic](images/alltoall.PNG "iamge")
 
 
@@ -12,7 +12,7 @@ In this code the mpi4py library is used to demonstrate Alltoall communication in
 ### Explaination:
 In this code, the `mpi4py` library is used to demonstrate broadcasting data from one process to all other processes using the `bcast` method. The communicator `comm` is initialized, and each process retrieves its unique rank. Process 0 initializes a variable `variable_to_share` with the value `100`, while all other processes set this variable to `None`. The `comm.bcast` method is then used to broadcast the value of `variable_to_share` from the root process (rank 0) to all processes in the communicator. After broadcasting, every process receives the same value of `variable_to_share` and prints its rank along with the shared variable value.
 
-###output:
+### output:
 ![Ergonomic](images/broadcast.PNG "iamge")
 
 
@@ -20,7 +20,7 @@ In this code, the `mpi4py` library is used to demonstrate broadcasting data from
 ### Explaination:
 In this code, the `mpi4py` library is used to demonstrate point-to-point communication between two processes using the `send` and `recv` methods. Each process retrieves its unique rank using `comm.Get_rank()` and prints it. If the rank is `1`, the process sends the string `"a"` to process `5` and receives data from process `5`. If the rank is `5`, the process receives data from process `1` and then sends the string `"b"` back to process `1`. Each send and receive operation is accompanied by a print statement indicating the action taken, the data involved, and the source or destination process. This creates a two-way communication exchange between processes `1` and `5`.
 
-###output:
+### output:
 ![Ergonomic](images/deadLockProblems.PNG "iamge")
 
 
@@ -28,7 +28,7 @@ In this code, the `mpi4py` library is used to demonstrate point-to-point communi
 ### Explaination:
 In this code, the `mpi4py` library is used to demonstrate the `gather` operation in MPI, where data from all processes is collected at a root process. Each process retrieves its rank and the total number of processes. If the rank is not `0`, the process computes its data as the square of `(rank + 1)` and prepares it for sending. The `comm.gather` method is then called, where all processes send their data to the root process (`rank 0`). On the root process, the gathered data is stored in the `data` array. The root process iterates through the received data and prints messages indicating the data received from each process.
 
-###output:
+### output:
 ![Ergonomic](images/gather.PNG "iamge")
 
 
@@ -46,7 +46,7 @@ In this code, the `mpi4py` library is used to demonstrate point-to-point communi
 
 This structure ensures all send and receive operations are executed only when valid ranks exist, avoiding errors during execution in smaller communicator sizes.
 
-###output:
+### output:
 ![Ergonomic](images/point_to_point_comm.PNG "iamge")
 
 
@@ -56,7 +56,7 @@ In this code, the `mpi4py` library is used to demonstrate the `Reduce` collectiv
 
 The `comm.Reduce` function is called with `MPI.SUM` as the reduction operation, which sums the `senddata` arrays from all processes. Only the root process (rank `0`) receives and stores the reduced result in its `recvdata` array, while other processes do not see the reduced data. After the reduction, each process prints its rank and the corresponding output. Rank `0` displays the combined result stored in `recvdata`, while other processes indicate they did not receive the reduced data.
 
-###output:
+### output:
 ![Ergonomic](images/reduction.PNG "iamge")
 
 
@@ -71,7 +71,7 @@ In this code, the `mpi4py` library is used to demonstrate the `scatter` operatio
 
 This operation ensures that the array is divided among processes, with each process working only on its designated element.
 
-###output:
+### output:
 ![Ergonomic](images/scatter.PNG "iamge")
 
 
@@ -85,5 +85,5 @@ The Cartesian topology is created using `comm.Create_cart`, enabling processes t
 
 Finally, each process prints its rank, grid coordinates, and the ranks of its neighbors, providing a clear overview of the grid topology and neighbor relationships. This is useful for applications that require structured communication patterns, such as finite-difference simulations or stencil computations.
 
-###output:
+### output:
 ![Ergonomic](images/virtualTopology.PNG "iamge")

@@ -26,10 +26,10 @@ This script demonstrates using `asyncio` with `Future` objects to run two asynch
 ![Ergonomic](images/chair.png "Ergonomic ")
 
 
-## concurrent_futures_pooling
+## event_loops
 
 ### Explaination:
-This code compares the performance of sequential execution, thread pool execution, and process pool execution using the `concurrent.futures` module. It defines a `count` function, which performs a CPU-intensive operation (an empty loop) for each item in a list, and an `evaluate` function that calls `count` and prints the result. First, the tasks are executed sequentially by iterating through the list. Next, a `ThreadPoolExecutor` is used to run the tasks concurrently in multiple threads, and a `ProcessPoolExecutor` is employed to run them in multiple processes. The execution time for each method is measured and printed, highlighting the speed differences between sequential, threaded, and multiprocessing approaches.
+This script demonstrates a sequence of asynchronous tasks scheduled using `asyncio`. Three tasks (`task_A`, `task_B`, and `task_C`) are defined, each with varying sleep durations that simulate unpredictable work. The tasks are triggered in a cyclic manner with `loop.call_later()`, meaning that each task schedules the next task to run after a delay of 1 second. The tasks use `time.sleep()` to simulate blocking behavior, but `loop.call_later()` schedules subsequent tasks based on the time available before reaching `end_time`, which is 60 seconds from the current time. If the loop's time exceeds the `end_time`, the loop is stopped. The tasks will continue to cycle through until the time limit is reached. The program runs until the loop is stopped after 60 seconds.
 
 ### Output:
 ![Ergonomic](images/chair.png "Ergonomic ")

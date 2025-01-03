@@ -24,3 +24,15 @@ In the main function, a shared multiprocessing queue is created. Two processes, 
 In this code there is one function foo and a main function. The foo function is executed by each process and behaves differently based on the process name. The foo function first retrieves the current process name. If the process name is background_process it prints numbers from 0 to 4 with a 1-second delay between prints. If the process name is non_background_process it prints numbers from 5 to 8 with a 1-second delay. The function announces when the process starts and ends. In the main function two processes are created background_process with the name 'background_process' set as a daemon process and non_background_process with the name 'non_background_process' set as a non-daemon process. Both processes are started. The non-background process continues to run independently until completion while the background process runs briefly and terminates when the main program ends due to its daemon nature. A delay time.sleep(2) is added to allow the daemon process to execute briefly before the program exits.
 ### Output
 ![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
+
+
+## killing_processes
+### Explanation:
+In this code there is a function foo and a main function. The foo function prints a starting message and then iterates through numbers 0 to 9 printing each number with a 1-second delay between iterations. It ends with a finished message. In the main function a process p is created with the target function foo. The state of the process is printed before starting it. The process is started and its running state is printed. The process is then terminated and its state is printed again. After termination the process is joined and its state is printed once more. Finally the process's exit code is printed to indicate its termination status.
+### Output
+![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
+
+
+
+
+

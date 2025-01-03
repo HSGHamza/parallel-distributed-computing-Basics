@@ -52,3 +52,16 @@ In this code there is a class MyProcess and a main function. The MyProcess class
 In this code there is a function function_square and a main function. The function_square function takes a single input value, squares it, and returns the result. In the main function a list of numbers from 0 to 99 is created and a multiprocessing pool with 4 worker processes is initialized. The pool.map method is used to apply the function_square function to each value in the list, distributing the work across the worker processes. After mapping the tasks the pool is closed to prevent new tasks from being submitted and the program waits for all worker processes to complete using the join method. Finally the squared results are printed as a list.
 ### Output
 ![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
+
+
+## processes_barrier
+### Explanation:
+
+In this code there are two functions, test_with_barrier and test_without_barrier, along with a main function. The test_with_barrier function takes a Barrier and a Lock as arguments. It retrieves the current process name, waits for all processes sharing the barrier to reach the same point using synchronizer.wait(), and then retrieves the current time. Using the Lock to ensure serialized access, it prints the process name along with the current time. The test_without_barrier function does not use a barrier or lock. It retrieves the current process name and immediately prints the name and the current time.
+
+In the main function, a Barrier is created to synchronize two processes and a Lock is created to ensure serialized access to printing. Four processes are started:
+
+Two processes, p1 - test_with_barrier and p2 - test_with_barrier, run the test_with_barrier function and are synchronized using the barrier.
+Two processes, p3 - test_without_barrier and p4 - test_without_barrier, run the test_without_barrier function and execute independently without synchronization.
+### Output
+![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")

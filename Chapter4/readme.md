@@ -5,7 +5,7 @@
 In this code the mpi4py library is used to demonstrate Alltoall communication in MPI. Each process creates a senddata array where elements are scaled by (rank+1) and allocates an empty recvdata array to receive data from other processes. The Alltoall method allows each process to send its data to every other process and receive corresponding data from them. After the communication, each process prints its rank, the data it sent, and the data it received. This pattern ensures every process exchanges data with all others.
 
 output:
-![Ergonomic](images/alltoall.PNG"iamge")
+![Ergonomic](Chapter4/images/alltoall.PNG "iamge")
 
 
 ## broadcast

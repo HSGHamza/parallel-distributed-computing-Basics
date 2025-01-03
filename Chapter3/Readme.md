@@ -83,3 +83,11 @@ In the main function, two processes are created. The first process, `background_
 ### Output
 ![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
 
+
+## spawning_processes_namespace
+### Explanation:
+In this code the `myFunc` function is imported from another module named `myFunc`. The main function creates and manages processes. A loop runs 6 times, and in each iteration, a new process is created targeting the `myFunc` function and passing the current loop index `i` as an argument. Each process is started, which triggers the execution of `myFunc` with the provided argument, and the program waits for the process to complete using the `join` method before starting the next process.
+### Output
+![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
+
+

@@ -31,7 +31,7 @@ This script demonstrates using `asyncio` with `Future` objects to run two asynch
 This script demonstrates a sequence of asynchronous tasks scheduled using `asyncio`. Three tasks (`task_A`, `task_B`, and `task_C`) are defined, each with varying sleep durations that simulate unpredictable work. The tasks are triggered in a cyclic manner with `loop.call_later()`, meaning that each task schedules the next task to run after a delay of 1 second. The tasks use `time.sleep()` to simulate blocking behavior, but `loop.call_later()` schedules subsequent tasks based on the time available before reaching `end_time`, which is 60 seconds from the current time. If the loop's time exceeds the `end_time`, the loop is stopped. The tasks will continue to cycle through until the time limit is reached. The program runs until the loop is stopped after 60 seconds.
 
 ### Output:
-![Ergonomic](images/concurrent_futures_pooling.PNG "Ergonomic ")
+![Ergonomic](images/event_loops.PNG "Ergonomic ")
 
 ## manipulating_task
 

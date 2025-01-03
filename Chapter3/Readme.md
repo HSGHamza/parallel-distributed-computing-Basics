@@ -56,7 +56,6 @@ In this code there is a function function_square and a main function. The functi
 
 ## processes_barrier
 ### Explanation:
-
 In this code there are two functions, test_with_barrier and test_without_barrier, along with a main function. The test_with_barrier function takes a Barrier and a Lock as arguments. It retrieves the current process name, waits for all processes sharing the barrier to reach the same point using synchronizer.wait(), and then retrieves the current time. Using the Lock to ensure serialized access, it prints the process name along with the current time. The test_without_barrier function does not use a barrier or lock. It retrieves the current process name and immediately prints the name and the current time.
 
 In the main function, a Barrier is created to synchronize two processes and a Lock is created to ensure serialized access to printing. Four processes are started:
@@ -65,3 +64,13 @@ Two processes, p1 - test_with_barrier and p2 - test_with_barrier, run the test_w
 Two processes, p3 - test_without_barrier and p4 - test_without_barrier, run the test_without_barrier function and execute independently without synchronization.
 ### Output
 ![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
+
+
+## processes_barrier
+### Explanation:
+In this code there is a function foo and a main function. The foo function retrieves the name of the current process and prints a starting message. If the process name is background_process, it prints numbers from 0 to 4 and then sleeps for 1 second. If the process name is NO_background_process, it prints numbers from 5 to 9 and then sleeps for 1 second. Finally, the function prints an exiting message.
+
+In the main function, two processes are created. The first process, background_process, is explicitly given the name 'background_process' and targets the foo function. The second process, NO_background_process, is explicitly given the name 'NO_background_process' and also targets the foo function. Both processes are set as non-daemon processes and are started to execute their respective tasks.
+### Output
+![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
+

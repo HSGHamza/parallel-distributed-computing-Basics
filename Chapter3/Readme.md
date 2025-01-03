@@ -33,6 +33,10 @@ In this code there is a function foo and a main function. The foo function print
 ![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
 
 
-
+## naming_processes
+### Explanation:
+In this code there is a function myFunc and a main function. The myFunc function retrieves the name of the current process and prints a starting message with the process name. It then sleeps for 3 seconds before printing an exiting message with the process name. In the main function two processes are created. The first process, process_with_name, is explicitly given the name 'myFunc process' and targets the myFunc function. The second process, process_with_default_name, uses the default naming scheme and also targets the myFunc function. Both processes are started, and the program waits for each process to complete using the join method.
+### Output
+![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
 
 

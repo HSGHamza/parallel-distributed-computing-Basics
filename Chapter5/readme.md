@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/d33ac9b6-066c-4b52-90eb-c8ae22b4f9f3)# Chapter 5
+# Chapter 5
 
 ## concurrent_futures_pooling
 

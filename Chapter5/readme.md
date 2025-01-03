@@ -39,4 +39,4 @@ This script demonstrates a sequence of asynchronous tasks scheduled using `async
 This script uses `asyncio` to run two asynchronous tasks concurrently: `factorial()` and `fibonacci()`. The `factorial()` function computes the factorial of a given number, and `fibonacci()` calculates Fibonacci numbers up to a specified index. Both functions use `await asyncio.sleep(1)` to simulate delays, making them non-blocking and allowing for asynchronous execution. In the main part of the script, the event loop is created using `asyncio.get_event_loop()`, and the tasks are added to the event loop with `loop.create_task()`. `loop.run_until_complete(asyncio.wait(task_list))` is used to run all tasks concurrently. The event loop continues executing until all tasks are complete, and then it is closed.
 
 ### Output:
-![Ergonomic](images/concurrent_futures_pooling.PNG "Ergonomic ")
+![Ergonomic](images/manipulating_task.PNG "Ergonomic ")

@@ -1,4 +1,4 @@
-# Chapter 5
+![image](https://github.com/user-attachments/assets/d33ac9b6-066c-4b52-90eb-c8ae22b4f9f3)# Chapter 5
 
 ## concurrent_futures_pooling
 
@@ -35,28 +35,10 @@ This script demonstrates a sequence of asynchronous tasks scheduled using `async
 ![Ergonomic](images/chair.png "Ergonomic ")
 
 
-## concurrent_futures_pooling
+## manipulating_task
 
 ### Explaination:
-This code compares the performance of sequential execution, thread pool execution, and process pool execution using the `concurrent.futures` module. It defines a `count` function, which performs a CPU-intensive operation (an empty loop) for each item in a list, and an `evaluate` function that calls `count` and prints the result. First, the tasks are executed sequentially by iterating through the list. Next, a `ThreadPoolExecutor` is used to run the tasks concurrently in multiple threads, and a `ProcessPoolExecutor` is employed to run them in multiple processes. The execution time for each method is measured and printed, highlighting the speed differences between sequential, threaded, and multiprocessing approaches.
-
-### Output:
-![Ergonomic](images/chair.png "Ergonomic ")
-
-
-## concurrent_futures_pooling
-
-### Explaination:
-This code compares the performance of sequential execution, thread pool execution, and process pool execution using the `concurrent.futures` module. It defines a `count` function, which performs a CPU-intensive operation (an empty loop) for each item in a list, and an `evaluate` function that calls `count` and prints the result. First, the tasks are executed sequentially by iterating through the list. Next, a `ThreadPoolExecutor` is used to run the tasks concurrently in multiple threads, and a `ProcessPoolExecutor` is employed to run them in multiple processes. The execution time for each method is measured and printed, highlighting the speed differences between sequential, threaded, and multiprocessing approaches.
-
-### Output:
-![Ergonomic](images/chair.png "Ergonomic ")
-
-
-## concurrent_futures_pooling
-
-### Explaination:
-This code compares the performance of sequential execution, thread pool execution, and process pool execution using the `concurrent.futures` module. It defines a `count` function, which performs a CPU-intensive operation (an empty loop) for each item in a list, and an `evaluate` function that calls `count` and prints the result. First, the tasks are executed sequentially by iterating through the list. Next, a `ThreadPoolExecutor` is used to run the tasks concurrently in multiple threads, and a `ProcessPoolExecutor` is employed to run them in multiple processes. The execution time for each method is measured and printed, highlighting the speed differences between sequential, threaded, and multiprocessing approaches.
+This script uses `asyncio` to run two asynchronous tasks concurrently: `factorial()` and `fibonacci()`. The `factorial()` function computes the factorial of a given number, and `fibonacci()` calculates Fibonacci numbers up to a specified index. Both functions use `await asyncio.sleep(1)` to simulate delays, making them non-blocking and allowing for asynchronous execution. In the main part of the script, the event loop is created using `asyncio.get_event_loop()`, and the tasks are added to the event loop with `loop.create_task()`. `loop.run_until_complete(asyncio.wait(task_list))` is used to run all tasks concurrently. The event loop continues executing until all tasks are complete, and then it is closed.
 
 ### Output:
 ![Ergonomic](images/chair.png "Ergonomic ")

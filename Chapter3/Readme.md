@@ -40,3 +40,8 @@ In this code there is a function myFunc and a main function. The myFunc function
 ![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
 
 
+## process_in_subclass
+### Explanation:
+In this code there is a class MyProcess and a main function. The MyProcess class inherits from multiprocessing.Process and overrides the run method. The run method prints a message indicating it has been called along with the name of the process. In the main function a loop runs 10 times. In each iteration a new process is created using the MyProcess class. The process is started which triggers the run method and then the program waits for the process to complete using the join method.
+### Output
+![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")

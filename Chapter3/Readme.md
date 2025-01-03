@@ -66,11 +66,20 @@ Two processes, p3 - test_without_barrier and p4 - test_without_barrier, run the 
 ![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
 
 
-## processes_barrier
+## run_background_processes_no_daemons
 ### Explanation:
 In this code there is a function foo and a main function. The foo function retrieves the name of the current process and prints a starting message. If the process name is background_process, it prints numbers from 0 to 4 and then sleeps for 1 second. If the process name is NO_background_process, it prints numbers from 5 to 9 and then sleeps for 1 second. Finally, the function prints an exiting message.
 
 In the main function, two processes are created. The first process, background_process, is explicitly given the name 'background_process' and targets the foo function. The second process, NO_background_process, is explicitly given the name 'NO_background_process' and also targets the foo function. Both processes are set as non-daemon processes and are started to execute their respective tasks.
+### Output
+![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
+
+
+## run_background_processes
+### Explanation:
+In this code there is a function `foo` and a main function. The `foo` function retrieves the current process name and prints a starting message. If the process name is `background_process`, it prints numbers from 0 to 4 and then sleeps for 1 second. If the process name is `NO_background_process`, it prints numbers from 5 to 9 and then sleeps for 1 second. Finally, the function prints an exiting message.
+
+In the main function, two processes are created. The first process, `background_process`, is explicitly given the name `'background_process'`, targets the `foo` function, and is set as a daemon process. The second process, `NO_background_process`, is explicitly given the name `'NO_background_process'`, targets the `foo` function, and is set as a non-daemon process. Both processes are started. The daemon process runs only while the main program is running and terminates when the main program ends, while the non-daemon process continues until it completes its task.
 ### Output
 ![Communication with pipe](Chapter3/images/CommunicationWithPipe.PNG "image1")
 

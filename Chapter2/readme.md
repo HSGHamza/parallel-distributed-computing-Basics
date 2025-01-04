@@ -66,3 +66,21 @@ This approach allows the threads to run concurrently, simulating a multithreadin
 
 ### Output:
 ![Ergonomic](images/MyThreadClass.PNG "Ergonomic")
+
+
+## Rlock
+
+### Explaination:
+This Python script demonstrates how to manage concurrent access to shared resources using threads and a reentrant lock (`RLock`). The program defines a `Box` class that contains a `total_items` attribute, which is modified by two threads: one for adding items and another for removing them. The `Box` class uses an `RLock` to ensure that these modifications are thread-safe, allowing only one thread to modify the `total_items` attribute at a time. The `adder` and `remover` functions simulate the addition and removal of items, respectively, with a sleep interval of 1 second to mimic real-world delays. In the `main` function, two threads are created—one to add items and another to remove them, both with randomly chosen numbers of items. The `join()` method ensures that the main program waits for both threads to finish before terminating. This script effectively demonstrates the use of threading and locks in Python to manage shared resources safely.
+
+### Output:
+![Ergonomic](images/Rlock.PNG "Ergonomic")
+
+
+## Semaphore
+
+### Explaination:
+This Python script demonstrates the use of a semaphore for synchronizing two threads: a producer and a consumer. The producer thread generates a random item number, which is then consumed by the consumer thread. The semaphore is initialized with a value of 0, meaning the consumer will initially be blocked until the producer releases the semaphore. The producer thread simulates a delay of 3 seconds before generating a random item, logging the item number, and releasing the semaphore to allow the consumer to proceed. The consumer waits for the semaphore to be released before logging the item number it consumes. The `main()` function creates and starts 10 pairs of producer and consumer threads, ensuring that the producer and consumer run concurrently. The `join()` method ensures that the main thread waits for both threads to complete before proceeding to the next iteration. This example shows how to use semaphores for controlling access to shared resources between threads in a synchronized manner.
+
+### Output:
+![Ergonomic](images/Semaphore.PNG "Ergonomic")

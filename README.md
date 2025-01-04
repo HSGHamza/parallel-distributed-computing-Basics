@@ -1,5 +1,7 @@
 # Python Multithreading and Parallelism Examples
 
+![image](https://github.com/user-attachments/assets/2bb12ac3-7041-43a1-9876-c05e6d0f84ff)
+
 ### The Python multithreading and parallelism examples above demonstrate various approaches to managing concurrency, using threads to perform tasks simultaneously. From basic thread creation and synchronization using locks, semaphores, and conditions, to more advanced examples like thread pools and producer-consumer patterns with queues, the code highlights how multiple threads can share resources and work concurrently. These examples also show how to manage thread execution timing, handle race conditions, and ensure that resources are accessed safely by using synchronization techniques. Overall, they provide a practical introduction to parallelism and concurrency in Python, essential for optimizing performance in multithreaded applications.
 
 

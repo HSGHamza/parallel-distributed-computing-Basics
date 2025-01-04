@@ -42,3 +42,27 @@ The `main()` function creates 9 threads, each with a unique name and a random sl
 
 ### Output:
 ![Ergonomic](images/MyThreadClass_lock_2.PNG "Ergonomic")
+
+
+## MyThreadClass_lock
+
+### Explaination:
+This Python script demonstrates the use of multithreading with a lock mechanism to ensure that threads run in a synchronized manner. The program defines a custom thread class, `MyThreadClass`, which accepts a name and a duration. Each thread simulates some work by sleeping for a random duration, and during this time, the thread acquires a lock to print the process ID and the status of the thread. This lock ensures that only one thread can print at a time, preventing race conditions and ensuring orderly output.
+
+In the `main()` function, 9 threads are created, each with a random sleep duration between 1 and 10 seconds. These threads are started and then joined, meaning the program waits for all threads to finish before continuing. The execution time is recorded from the start to the end of the process, and after all threads have completed their work, the total time taken is printed. This approach allows for concurrent execution while managing access to shared resources using threading locks, ensuring smooth execution even when multiple threads are involved.
+
+### Output:
+![Ergonomic](images/MyThreadClass_lock.PNG "Ergonomic")
+
+
+## MyThreadClass
+
+### Explaination:
+This Python script demonstrates the creation and management of multiple threads using the `threading` module. Each thread, represented by the custom `MyThreadClass`, is initialized with a name and a randomly generated duration for which it will "sleep" (simulate a task). The `run()` method of the thread is responsible for printing the name of the thread, the process ID, sleeping for the specified duration, and then printing a message indicating that the thread has completed its task.
+
+The `main()` function creates nine threads, each with a different random duration between 1 and 10 seconds. The threads are started concurrently using the `start()` method. After starting each thread, the `join()` method is called on each thread to ensure the main program waits for all threads to complete before proceeding. The execution time of the entire process is measured, and once all threads have finished, the total time taken is printed.
+
+This approach allows the threads to run concurrently, simulating a multithreading environment where multiple tasks are performed simultaneously, and synchronization between them is automatically managed by the Python threading library.
+
+### Output:
+![Ergonomic](images/MyThreadClass.PNG "Ergonomic")

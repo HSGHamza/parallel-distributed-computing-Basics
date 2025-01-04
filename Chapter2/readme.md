@@ -84,3 +84,47 @@ This Python script demonstrates the use of a semaphore for synchronizing two thr
 
 ### Output:
 ![Ergonomic](images/Semaphore.PNG "Ergonomic")
+
+
+## Thread_definition
+
+### Explaination:
+This Python script creates and runs 10 threads, each calling the `my_func` function. Inside the `main()` function, a loop iterates 10 times, and for each iteration, a new thread is created with `threading.Thread`. The `target` argument specifies the function to be executed, and the `args` argument passes the thread number (`i`) to the function. Each thread starts executing immediately after being created with `t.start()`, and then `t.join()` ensures that the main thread waits for the current thread to finish before moving to the next one. This means the threads execute sequentially, one after another. The `my_func` function simply prints a message indicating the thread number. This script demonstrates basic thread creation and sequential execution, although threading doesn't typically require joining in this case since the threads are executed one at a time.
+
+### Output:
+![Ergonomic](images/Thread_definition.PNG "Ergonomic")
+
+
+## Thread_determine
+
+### Explaination:
+This script demonstrates basic thread creation and execution using the `threading` module in Python. Three functions—`function_A`, `function_B`, and `function_C`—are defined, each of which prints a message indicating the start and end of the function execution, with a `time.sleep(2)` to simulate some processing time. The threads are created using `threading.Thread`, with each thread assigned a name and a target function to execute.
+
+In the `main()` section, three threads (`t1`, `t2`, and `t3`) are created and started with the `start()` method. Each thread runs one of the functions concurrently. The `join()` method is called on each thread, ensuring that the main thread waits for all threads to complete their execution before it terminates.
+
+The output of this script will show the messages from each function starting and finishing in parallel, but since each function sleeps for 2 seconds, the threads are executed concurrently with each other, allowing for overlapping execution times.
+
+### Output:
+![Ergonomic](images/Thread_determine.PNG "Ergonomic")
+
+
+## Thread_name_and_processes
+
+### Explaination:
+This Python script demonstrates the use of threads to run concurrent tasks. A custom thread class, `MyThreadClass`, is derived from the `Thread` class. The `run()` method of this class defines what each thread will do when it starts. In this case, it prints the name of the thread and its associated process ID using `os.getpid()`. However, the `os.getpid()` is not used in the code, as only the thread name is printed.
+
+The `main()` function creates two threads, `thread1` and `thread2`, each running an instance of `MyThreadClass` with a unique name. The `start()` method is called to begin the threads' execution, and the `join()` method ensures that the main thread waits for both threads to finish before continuing. Finally, the script prints "End" when all threads are completed.
+
+This script will run `thread1` and `thread2` concurrently, and since each thread prints a message when it starts, the output will show the names of the threads being printed as they execute.
+
+### Output:
+![Ergonomic](images/Thread_name_and_processes.PNG "Ergonomic")
+
+
+## Threading_with_queue
+
+### Explaination:
+This Python script demonstrates thread synchronization using a queue, where a producer thread generates random items and places them into a shared queue, while multiple consumer threads consume those items. The `Producer` thread creates random integers, adds them to the queue, and prints a notification. The `Consumer` threads retrieve items from the queue, process them, and print notifications indicating the items have been consumed. The queue acts as a synchronization mechanism, ensuring that only one thread can add or remove an item at a time. The script uses four threads—one producer and three consumers—where the main function waits for all threads to complete before exiting. This approach showcases how queues can be effectively used for coordinating work between producer and consumer threads.
+
+### Output:
+![Ergonomic](images/Threading_with_queue.PNG "Ergonomic")
